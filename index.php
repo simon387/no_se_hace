@@ -13,7 +13,7 @@ if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 
 
 $file = fopen('ip.log', 'a+');
-fwrite($file, $ipAddress . "\r\n");
+fwrite($file, date('Y-m-d H:i:s') . " - " . $ipAddress . "\r\n");
 
 header("Location: https://www.google.it/");
 die();
